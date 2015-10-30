@@ -2,11 +2,468 @@
 # Aptech LDAP Schema 0.1
 # based on OPEN X CHANGE ORG - SCHEMA 0.1
 #
-attributetype ( 1.3.6.1.4.1.46588.1.1 NAME ( 'mailEnabled' )
-        DESC 'Is the user mail enabled or not, for pam_ldap,postfix etc. filtering...'
+attributetype ( 1.3.6.1.4.1.46588.1.1 NAME ( 'APTmiddleName' )
+        DESC 'User middle name'
         EQUALITY caseIgnoreMatch
         SUBSTR caseIgnoreSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15{32768} SINGLE-VALUE )
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.2 NAME ( 'APTnickname' )
+        DESC 'User nickname'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.3 NAME ( 'APTgender' )
+        DESC 'User gender'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.4 NAME ( 'APTpasswordMech' )
+        DESC 'User nickname'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.5 NAME ( 'APTlanguage1' )
+        DESC 'User preferred language'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.6 NAME ( 'APTlanguage2' )
+        DESC 'User preferred language'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.7 NAME ( 'APTtimezone1' )
+        DESC 'User timezone'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.8 NAME ( 'APTtimezone2' )
+        DESC 'User timezone'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.9 NAME ( 'APTcountry_home' )
+        DESC 'User home country'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.10 NAME ( 'APTfax_home' )
+        DESC 'User home Fax number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.11 NAME ( 'APTbirthday' )
+        DESC 'User birthday'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.12 NAME ( 'APTmarital_status' )
+        DESC 'User marital status'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.13 NAME ( 'APTspouse_name' )
+        DESC 'User spouse name'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.14 NAME ( 'APTchildren' )
+        DESC 'User number of children'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.15 NAME ( 'APTcategories_home' )
+        DESC 'User home categorie'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.16 NAME ( 'APTinfo' )
+        DESC 'User additional information'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.17 NAME ( 'APTnote' )
+        DESC 'User note'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.18 NAME ( 'APTsuffix' )
+        DESC 'User suffix, may be required by some Imap server to determine namespace'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.19 NAME ( 'APTemail1' )
+        DESC 'User email1'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.20 NAME ( 'APTemail2' )
+        DESC 'User email2'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.21 NAME ( 'APTemail3' )
+        DESC 'User email3'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.22 NAME ( 'APTdefaultsenderaddress' )
+        DESC 'User default email address'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.23 NAME ( 'APTmailDrafts' )
+        DESC 'Email drafts folder name'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.24 NAME ( 'APTmailSent' )
+        DESC 'Email sent folder name'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.25 NAME ( 'APTmailSpam' )
+        DESC 'Email spam folder name'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.26 NAME ( 'APTmailTrash' )
+        DESC 'Email trash folder name'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.27 NAME ( 'APTmailConfirmedHam' )
+        DESC 'Email confirmed ham folder name'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.28 NAME ( 'APTmailConfirmedSpam' )
+        DESC 'Email confirmed spam folder name'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.29 NAME ( 'APTimaplogin' )
+        DESC 'Imap server on which the user mailbox reside'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.30 NAME ( 'APTsmtpserver' )
+        DESC 'User outgoing SMTP server'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.31 NAME ( 'APTsmtpDomain' )
+        DESC 'Virtual Domain accepted by the SMTP server'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.32 NAME ( 'APTsmtpDomainTransportNexthop' )
+        DESC 'SMTP Transport map'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.33 NAME ( 'APTinstant_messenger1' )
+        DESC 'User instant messenger account1'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.34 NAME ( 'APTinstant_messenger2' )
+        DESC 'User instant messenger account2'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.35 NAME ( 'APTmailenabled' )
+        DESC 'Is the user email account enabled?'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.36 NAME ( 'APTuserType' )
+        DESC 'User type'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.37 NAME ( 'APTloginAfter' )
+        DESC 'Allow login after X hour'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.38 NAME ( 'APTloginBefore' )
+        DESC 'Allow login before x hour'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.39 NAME ( 'APTrestrictIp' )
+        DESC 'Restrict login to listed IPs, separated by comma'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.40 NAME ( 'APTRoles' )
+        DESC 'Roles assigned to user'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.41 NAME ( 'APTposition' )
+        DESC 'User company position'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.42 NAME ( 'APTbranche' )
+        DESC 'User company branche'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.43 NAME ( 'APTprofession' )
+        DESC 'User profession'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.44 NAME ( 'APTassistantName' )
+        DESC 'User assistant name '
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.45 NAME ( 'APTnumberEmployee' )
+        DESC 'Number of employee under the supervision of the user'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.46 NAME ( 'APTcountry_business' )
+        DESC 'User business country'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.47 NAME ( 'APTstate_business' )
+        DESC 'User business state'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.48 NAME ( 'APTcity_business' )
+        DESC 'User business city'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.49 NAME ( 'APTstreet_business' )
+        DESC 'User business street'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.50 NAME ( 'APTpostalCode_business' )
+        DESC 'User business postal code'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.51 NAME ( 'APTcountry_other' )
+        DESC 'User other country'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.52 NAME ( 'APTstate_other' )
+        DESC 'user other sate'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.53 NAME ( 'APTcity_other' )
+        DESC 'User other city'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.54 NAME ( 'APTstreet_other' )
+        DESC 'User other street'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.55 NAME ( 'APTpostal_code_other' )
+        DESC 'User other postal code'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.56 NAME ( 'APTcellular1' )
+        DESC 'User cellular phone number1'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.57 NAME ( 'APTcellular2' )
+        DESC 'User cellular phone number2'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.58 NAME ( 'APTtelRadio' )
+        DESC 'User radio number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.59 NAME ( 'APTtelIp' )
+        DESC 'User IP phone extension'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.60 NAME ( 'APTtelPager' )
+        DESC 'User pager number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.61 NAME ( 'APTtelAssistant' )
+        DESC 'User assistant telephone number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.62 NAME ( 'APTtelBusiness1' )
+        DESC 'User business telephone number1'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.63 NAME ( 'APTtelBusiness2' )
+        DESC 'User business telephone number2'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.64 NAME ( 'APTtelCompany' )
+        DESC 'User company telephone number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.65 NAME ( 'APTtelTelex' )
+        DESC 'User telex number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.66 NAME ( 'APTtelTtytdd' )
+        DESC 'User ttytdd number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.67 NAME ( 'APTtelPrimary' )
+        DESC 'User primary telephone number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.68 NAME ( 'APTtelOther' )
+        DESC 'User other tlelphone number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.69 NAME ( 'APTtelCallback' )
+        DESC 'User callback telephone number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.70 NAME ( 'APTfax_business' )
+        DESC 'User business fax number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.71 NAME ( 'APTfax_other' )
+        DESC 'User other fax number'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.65 NAME ( '' )
+        DESC ''
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.65 NAME ( '' )
+        DESC ''
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.65 NAME ( '' )
+        DESC ''
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.65 NAME ( '' )
+        DESC ''
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+attributetype ( 1.3.6.1.4.1.46588.1.65 NAME ( '' )
+        DESC ''
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+
+
+
+
+
+
 
 attributetype ( 1.3.6.1.4.1.46588.1.2 NAME ( 'mailAlias' )
         DESC 'Users email alias'
@@ -839,8 +1296,35 @@ attributetype ( 1.1.2.1.1.113 NAME ( 'domainName' )
 # Object Class definition
 #
 
-objectclass ( 1.1.2.2.1.1 NAME 'OXUserObject' SUP top AUXILIARY
-        DESC 'Additional Objectclass for OX User'
+objectclass ( 1.1.2.2.1.1 NAME 'APTUserObject' SUP top AUXILIARY
+        DESC 'Objectclass for Aptitude Technologies User'
+
+	MAY (	
+
+
+        MAY ( alias $ imapServer $ imapPort $ sievePort $ mailDomain $ smtpServer $ smtpPort $
+        groupwareServer $ groupwareServerPort $ webmailServer $ webmailServerPort $
+        DBServer $ DBServerPort $ DBServerType $ reject $ relClientCert $ userCountry $
+        loginDestination $ birthDay $ colocRouteAddr $ mailEnabled $ lnetMailAccess $ vaddress $
+        IPPhone $ url $ otherpager $ otherfacsimiletelephonenumber $ homephone $
+        c $ info $ middleName $ co $ conferenceInformation $ telexNumber $
+        OXGroupwareStyle $ OXWebmailStyle $ OXGroupID $ OXAppointmentDays $ OXTaskDays $ OXDayViewInterval $ OXDayViewStartTime $ OXDayViewEndTime $ OXTimeZone $
+        OXUserSuffix $ OXUserPostalCode $ OXUserCity $ OXUserState $ OXUserMaritalStatus $ OXUserChildren $ OXUserProfession $
+        OXUserNickName $ OXUserSpouseName $ OXUserAnniversary $ OXUserComment $
+        OXUserPosition $ OXUserSalesVolume $ OXUserTaxID $ OXUserComReg $ OXUserBranches $
+        OXUserAssistant $ OXUserCategories $ OXUserOtherStreet $ OXUserOtherPostalCode $ OXUserOtherCity $
+        OXUserOtherState $ OXUserOtherCountry $ OXUserTeleAssistant $ OXUserTeleBusiness2 $ OXUserTeleCallback $
+        OXUserTeleCar $ OXUserTeleCompany $ OXUserTeleHome2 $ OXUserTeleMobile2 $ OXUserTeleOther $ OXUserTeleFax2 $
+        OXUserTelePrimary $ OXUserTeleRadio $ OXUserTeleTTY $ OXUserInstantMessenger $ OXUserInstantmessenger2 $
+        OXUserEmail2 $ OXUserEmail3 $ OXUserUserUndef01 $ OXUserUserUndef02 $ OXUserUserUndef03 $ OXUserUserUndef04 $
+        OXUserUserUndef05 $ OXUserUserUndef06 $ OXUserUserUndef07 $ OXUserUserUndef08 $ OXUserUserUndef09 $
+        OXUserUserUndef10 $ OXUserUserUndef11 $ OXUserUserUndef12 $ OXUserUserUndef13 $ OXUserUserUndef14 $
+        OXUserUserUndef15 $ OXUserUserUndef16 $ OXUserUserUndef17 $ OXUserUserUndef18 $ OXUserUserUndef19 $
+        OXUserUserUndef20 $ OXUserDistributionList
+        ))
+
+objectclass ( 1.1.2.2.1.1 NAME 'ErpnextUserObject' SUP top AUXILIARY
+        DESC 'Objectclass for ERPNext User'
         MAY ( alias $ imapServer $ imapPort $ sievePort $ mailDomain $ smtpServer $ smtpPort $
         groupwareServer $ groupwareServerPort $ webmailServer $ webmailServerPort $
         DBServer $ DBServerPort $ DBServerType $ reject $ relClientCert $ userCountry $
